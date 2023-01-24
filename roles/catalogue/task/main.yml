@@ -1,0 +1,4 @@
+- name: Test
+  ansiable.builtin.debug:
+    msg: Hello from catalogue
+    
