@@ -1,4 +1,4 @@
 - name: Test
-  ansiable.builtin.debug:
+  ansible.builtin.debug:
     msg: Hello from catalogue
     
