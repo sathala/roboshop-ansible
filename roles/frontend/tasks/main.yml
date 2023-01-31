@@ -9,9 +9,9 @@
     state: absent
 
 - name: Create HTTP Document Directory
-  ansible.builtin.files:
+  ansible.builtin.file:
     path: /usr/share/nginx/html
-    state: directory
+    state: directoryy
 
 - name: Download frontend App content
   ansible.builtin.unarchive:
