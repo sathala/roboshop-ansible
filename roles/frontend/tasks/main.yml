@@ -4,7 +4,7 @@
     state: installed
 
 - name: Remove old HTTP Documents
-  ansible.builtin.files:
+  ansible.builtin.file:
     path: /usr/share/nginx/html
     state: absent
 
