@@ -5,14 +5,14 @@
 
 - name: Install MongoDB Server
   ansible.builtin.yum:
-    name: mongodb.org
+    name: mongodb-org
     state: installed
 
 - name: Update MongoDB Listen Address
   ansible.builtin.replace:
     path: /etc/mongod.conf
-    regex: '127.0.0.1'
-    replace:'0.0.0.0' 
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
 
 - name: Start MongoDB
   ansible.builtin.systemd:
