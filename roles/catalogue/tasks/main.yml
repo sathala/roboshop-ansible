@@ -43,3 +43,9 @@
     enabled: yes
     state: restarted    
 
+- name: Load Schema
+  community.mongodb.mongodb_shell:
+    login_hosts: mongodb-dev.devopsk24.online
+    file: "/app/schema/catalogue.js"
+    idempotent: yes
+
