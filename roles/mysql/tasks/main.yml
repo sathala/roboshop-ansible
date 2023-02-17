@@ -6,18 +6,18 @@
     src: mysql.repo
     dest: /etc/yum.repos.d/mysql.repo
 
-- name: Install MySQL server
+- name: Install MySQL Server
   ansible.builtin.yum:
     name: mysql-community-server
     state: installed
 
-- name: Start MySQL service
+- name: Start MySQL Service
   ansible.builtin.systemd:
     name: mysqld
     state: restarted
     enabled: yes
 
-- name: reset MySQL Default Password
+- name: Reset MySQL Default Password
   ansible.builtin.shell: mysql_secure_installation --set-root-pass {{root_mysql_password}}
   register: out
   ignore_errors: yes 
