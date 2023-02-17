@@ -1,16 +1,16 @@
 - name: Copy MongoDB Yum Repo file
   ansible.builtin.copy:
     src: mongoDB.repo
-    dest: /etc/yum.repos.d/mongoDB.repo
+    dest: /etc/yum.repos.d/mongodb.repo
 
 - name: Install MongoDB Server
   ansible.builtin.yum:
-    name: mongodb-org-shell
+    name: mongoDB-org-shell
     state: installed
  
 - name: Load Schema
-  community.mongodb.mongodb_shell:
-    login_host: mongodb-dev.devopsk24.online
+  community.mongoDB.mongoDB_shell:
+    login_host: mongoDB-dev.devopsk24.online
     file: "/app/schema/{{componment}}.js"
     idempotent: yes
  
