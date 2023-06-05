@@ -1,0 +1,11 @@
+- name: COpy SystemD file
+  ansible.builtin.copy:
+    src: "{{componment}}.service"
+    dest: /etc/systemd/system/{{componment}}.service
+
+- name: Start Catalogue Service
+  ansible.builtin.systemd:
+    name: "{{componment}}"
+    daemon_reload: yes
+    enabled: yes
+    state: restarted
